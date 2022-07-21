@@ -10,6 +10,7 @@ experiment:
 
 
 data:
+  data_root: './HPA_data/Cell/data'
 #  celllabel: 'imagelabel'
   celllabel: 'pseudolabel'
 

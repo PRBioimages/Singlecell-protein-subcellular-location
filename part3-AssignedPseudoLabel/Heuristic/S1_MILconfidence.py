@@ -18,12 +18,12 @@ def get_bbox(mask):
 
 
 def main():
-    args = parse_args()
+    cfg = parse_args()
 
     Result_TestDir = './Results'
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-    CELL_Model_DIR = args.model_path
+    CELL_Model_DIR = cfg.MILmodel.path1
 
 
     print('CELL_Model_DIR:', CELL_Model_DIR)
@@ -34,12 +34,12 @@ def main():
     Cell_df = Cell_df.drop_duplicates('ID', keep='last', ignore_index=True).reset_index(drop=True)
 
 
-    TEST_IMG_DIR = args.IFdata_root
-    root_mask = args.Maskdata_root
-    cfg_path = args.config
+    TEST_IMG_DIR = cfg.data.root_data
+    root_mask = cfg.data.root_mask
+    modelname = cfg.MILmodel.name1
 
+    cfg.model.name = modelname
 
-    cfg = Config.load_json(cfg_path)
 
 
     label_cols = list(range(19))

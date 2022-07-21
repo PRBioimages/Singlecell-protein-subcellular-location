@@ -59,7 +59,7 @@ class Experiment(Element):
 class Data(Element):
     def __init__(self, dict):
         self.cell = dict.get('cell', 'none')
-        self.name = dict.get('name', 'CouldDataset')
+        self.name = dict.get('name', 'HPADataset')
         self.transclass = dict.get('transclass', 'all')
         self.withclassor = dict.get('withclassor', 'all')
         self.onlyclassand = dict.get('onlyclassand', 'all')

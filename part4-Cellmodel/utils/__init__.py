@@ -52,7 +52,6 @@ def prepare_for_result(cfg: Config):
 def parse_args():
     parser = argparse.ArgumentParser()
     arg = parser.add_argument
-    arg('--data_root', type=str, help='the root directory of the cell dataset')
     arg('--debug', type=bool, default=False, help='if true, enter the debug mode')
     arg('--gpu', type=str, default='0', help='Specify GPU, multi GPU need to be seperated by commas, --gpu 0,1')
     arg('-config', type=str, default='config.yaml', help='path of config file(.yaml)')
@@ -64,7 +63,7 @@ def parse_args():
 
     cfg.basic.GPU = [str(i) for i in str(args.gpu).split(',')]
     cfg.basic.debug = args.debug
-    cfg.data.data_root = args.data_root
+
 
     if not args.seed == -1:
         cfg.basic.seed = args.seed
