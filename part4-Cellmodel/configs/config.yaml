@@ -1,0 +1,63 @@
+basic:
+  seed: 233
+  amp: 'Native'
+
+
+experiment:
+  name: 'RandomKTrainTestSplit'
+  random_state: 233
+  csv_file: 'all_cell_pseudo.csv'
+
+
+data:
+#  celllabel: 'imagelabel'
+  celllabel: 'pseudolabel'
+
+
+model:
+  name: 'Cell_resnet50d'
+
+  out_feature: 19
+  params:
+    dropout: 0.5
+    pretrained: True
+
+
+train:
+  dir: './results'
+  batch_size: 344
+  num_epochs: 3
+
+
+eval:
+  batch_size: 344
+
+
+loss:
+  name: 'bce'
+  pos_weight: 0.1
+  params:
+    reduction: 'none'
+
+
+
+optimizer:
+  name: 'Adam'
+  step: 1
+  params:
+    lr: 0.01
+    weight_decay: 0
+
+
+scheduler:
+  name: 'CosineAnnealingLR'
+  warm_up: True
+  params:
+    factor: 0.1
+    patience: 10
+
+
+transform:
+  name: 'augmentation'
+  num_preprocessor: 10
+  size: 224
