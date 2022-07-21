@@ -1,0 +1,73 @@
+basic:
+  seed: 233
+  amp: 'Native'
+
+
+experiment:
+  name: 'RandomKTrainTestSplit'
+  random_state: 233
+  count: 16
+  csv_file: 'all_cell_pseudo.csv'
+
+
+data:
+  celllabel: 'imagelabel'
+#  celllabel: 'pseudolabel'
+
+
+model:
+#  name: 'xception'
+#  name: 'attention_xception'
+#  name: 'gattention_xception'
+#  name: 'transformer_xception'
+#  name: 'resnet50d'
+  name: 'attention_resnet50d'
+#  name: 'gattention_resnet50d'
+#  name: 'transformer_resnet50d'
+
+  out_feature: 19
+  params:
+    dropout: 0.5
+    pretrained: True
+
+
+train:
+  dir: './results'
+  batch_size: 5
+  num_epochs: 12
+
+
+eval:
+  batch_size: 1
+
+
+loss:
+  name: 'bce'
+  cellweight: 1
+  imgweight: 1
+  pos_weight: 0.1
+  params:
+    reduction: 'none'
+
+
+
+optimizer:
+  name: 'Adam'
+  step: 1
+  params:
+    lr: 0.0002
+    weight_decay: 0
+
+
+scheduler:
+  name: 'CosineAnnealingLR'
+  warm_up: True
+  params:
+    factor: 0.1
+    patience: 10
+
+
+transform:
+  name: 'augmentation'
+  num_preprocessor: 10
+  size: 224

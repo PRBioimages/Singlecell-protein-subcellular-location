@@ -1,0 +1,27 @@
+basic:
+  GPU: 0
+
+
+data:
+  root_data: '../HPA_data/IF/data'
+
+  ### root_mask is directory of the IF mask segmented by the segmentation tool in advance
+  root_mask: './test_data/Prediction/MaskPrediction'
+  save_dir: './results'
+
+
+MILmodel:
+  name1: 'xception'
+  pth_path1: './f1_epoch-11.pth'
+  name2: 'attention_resnet50d'
+  pth_path2: './f1_epoch-11.pth'
+  frac: 1
+
+
+CellModel:
+  name: 'Cell_resnet50d'
+  pth_path: './f1_epoch-2.pth'
+  frac: 0
+
+
+
