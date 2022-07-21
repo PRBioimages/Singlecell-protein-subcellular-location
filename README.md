@@ -7,7 +7,7 @@ Multi-instance learning model based on IF images.Run ***main.py*** to get image-
 ## 3 part3 AssignedPseudoLabel
 Run ***./Clustering/clustering_main.py*** to get the pseudo-label by clustering method, and run codes in ./Heuristic step by step to get the pseudo-label by heuristic method. Run ***./S1_CombinedPseudo.py*** to get the cell label for cell-based model (part4)
 ## 4 part4 Cellmodel
-Cell-based model based on cell images and pseudo-label (part3) .Run ***main.py*** to get cell-based model. Multiple parameters for model training are saved in the configuration file **./configs/config.yaml**. Before running the code, add the absolute path of the directory of the cell images to the variable **data:data_root** in the configuration file.
+Cell-based model based on cell images and pseudo-labels (part3) .Run ***main.py*** to get cell-based model. Multiple parameters for model training are saved in the configuration file **./configs/config.yaml**. Before running the code, add the absolute path of the directory of the cell images to the variable **data:data_root** in the configuration file.
 ## 5 part5 Ensemble-Validation
 Run ***S1-validation-ensemble.py*** to test the performance of ensemble model on manual test set. Multiple parameters for model validation are saved in the configuration file **./configs/config.yaml**. Before running the code, add the absolute path of the directory of the test images to  **data:root_data**  and path of model's weight to **MILmodel:pth_path** and **CellModel:pth_path** in the configuration file.
 Validation of the ensemble model on the Kaggle test set is available on the Kaggle platform.
