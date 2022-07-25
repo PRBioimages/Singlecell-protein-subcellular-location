@@ -1,5 +1,5 @@
 # Singlecell-protein-subcellular-location
-This is a deep learning-based protein subcellular localization pipline for predicting protein subcellular locations on single cells in immunofluorescence images.
+This is a deep learning-based protein subcellular localization pipline for predicting protein subcellular locations on single cells in immunofluorescence images. The publication about this source code is 'Automatic recognition of protein subcellular location patterns in single cells from immunofluorescence images based on deep learning'
 ## 1 part1 preprocessing
 Kaggle training set can be accessed by [link](https://www.kaggle.com/competitions/hpa-single-cell-image-classification/data?select=train). Run the code in this folder setp by step to obtain the IF data in the HPA database and obtain the index file (*.csv*) of the data, all data are stored in the folder **HPA_data**, and all processed index files are stored in the folder **data_csv**.
 ## 2 part2 MIL
