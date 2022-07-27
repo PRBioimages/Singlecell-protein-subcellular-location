@@ -46,7 +46,7 @@ def main():
             sub_df.loc[k: k + len(Intensitys_Inds) - 1, f'class_selected'] = pseudo_label
             k = k + len(Intensitys_Inds)
         # sub_df = sub_df[sub_df[select_class] > 0.0].reset_index(drop=True)
-
+        sub_df['Label'] = sub_df['Label'].apply(lambda x: '|'.join(x))
         sub_df[select_class] = sub_df[f'class_selected']
         sub_df.to_csv(join(Result_TestDir, f'heuristic_{i}.csv'),
                   index=False)

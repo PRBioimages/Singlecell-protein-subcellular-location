@@ -184,7 +184,7 @@ def main():
 
                     out_path = join(out_dir_all, f'{num1}_{num2}')
                     maybe_mkdir_p(out_path)
-                    # cluster_multi_df.to_csv(join(out_path, f'{lc}_dimension{dim}.csv'), index=False)
+                    cluster_multi_df.to_csv(join(out_path, f'{lc}_dimension{dim}.csv'), index=False)
 
         elif len(lc.split(';')) == 3:
             num1, num2, num3 = lc.split(';')

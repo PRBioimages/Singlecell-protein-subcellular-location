@@ -25,7 +25,6 @@ def main():
 
     CELL_Model_DIR = cfg.MILmodel.path1
 
-
     print('CELL_Model_DIR:', CELL_Model_DIR)
 
     meta_dir = join(os.path.abspath(os.path.join(os.getcwd(), "../..")), 'data_csv')

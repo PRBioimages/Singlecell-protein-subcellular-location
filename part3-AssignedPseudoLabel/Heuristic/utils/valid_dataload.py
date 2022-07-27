@@ -161,7 +161,7 @@ class HPADataSET(Dataset):
         cell_bboxes = get_contour_bbox_from_raw(rgby_mask)
 
         rgby_mask = label(rgby_mask).copy()
-        # cv2.imwrite(join('/home/Datasets/IF/Images/mask_', ID + '_mask.png'), rgby_mask)
+
         k = 0
         cell_tiles = []
         for bbox in cell_bboxes:
