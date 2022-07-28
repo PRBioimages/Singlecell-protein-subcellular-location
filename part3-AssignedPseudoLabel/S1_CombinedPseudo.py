@@ -13,7 +13,6 @@ def main():
     ## Clustering pseudo labels to update training set labels  ##
     print('updating data by Clustering method')
     for Clustering_path in tqdm(Clustering_paths, total=len(Clustering_paths)):
-        continue
         l = [int(i) for i in Clustering_path.split('_') if str.isdigit(i)]
         Subcell_loc = list(map(lambda x: str(INT_2_STR[int(x)]), l))
         updatelabel = ['kmeans' + '_' + i for i in Subcell_loc]
@@ -47,7 +46,7 @@ def main():
 
     train = train[['ID_idx', 'ID', 'idx', 'fold'] + LBL_NAMES].reset_index(drop=True)
     meta_dir = os.path.join(os.path.abspath(os.path.join(os.getcwd(), "../..")), 'data_csv')
-    train.to_csv(join(meta_dir, f'cell_pseudo.csv'), index=False)
+    train.to_csv(join(meta_dir, f'all_cell_pseudo.csv'), index=False)
 
 
 if __name__ == '__main__':

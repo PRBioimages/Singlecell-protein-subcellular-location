@@ -26,7 +26,6 @@ def getalldf():
     df_allcell = df_allcell.drop_duplicates('ID', keep='last', ignore_index=True).reset_index(drop=True)
     df_allcell = renamecolumn(df_allcell)
 
-    # df_notest = pd.read_csv('/home/xlzhu/Work1_SingleCellPrediciton/code/work8_singlecell/dataloaders/split/hpa_train_notest.csv')
     df_test = pd.read_csv(join(meta_dir, 'RandomSelect_MamualReset.csv'))
     df_allcell = df_allcell[~df_allcell.ID.isin(df_test.ID)].reset_index(drop=True)
     return df_allcell.reset_index(drop=True)
