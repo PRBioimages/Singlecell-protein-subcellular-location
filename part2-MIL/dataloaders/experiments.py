@@ -4,6 +4,7 @@ from dataloaders.datasets import *
 from dataloaders.transform_loader import get_tfms
 import os
 from dataloaders.datasets import a_ordinary_collect_method
+from utils import Config
 
 
 class RandomKTrainTestSplit:
